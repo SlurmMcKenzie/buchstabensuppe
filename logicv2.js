@@ -26,6 +26,7 @@ var max = arrayLength;
 
 // Text in For-Schleife
 var text = [];
+var word = [];
 
 // Zufaelligen Zufall generieren, Zahl zwischen 0 und 25.
 function random(min, max) {
@@ -33,12 +34,18 @@ function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+// Map random number to random letter
 for (i = 1 ; i <= reducedField; i++) {
     text += alphabet[random(min, max)];
 }
 
+// get all letters from searchWord into word
+for (i = 0 ; i < searchWordLength; i++) {
+     word += searchWord[i];
+}
+
+//join arrays
+textur = text.concat(word);
+
 // Zufaellig erzeugten Buchstaben aus 'alphabet' auswaehlen
-console.log(text);
-//console.log("Buchstabe aus dem Alphabet:" + alphabet[random(min, max)]);
-//console.log("Suchwortlaenge:" + searchWordLength);
-//console.log("Feldgroesse:" + reducedField);
+console.log(textur);
